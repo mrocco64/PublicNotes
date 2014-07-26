@@ -1,0 +1,10 @@
+.list
+	.sticky
+		.id
+			#{@note.id}
+		.title
+			#{@note.title}
+		.content
+			#{@note.note}
+	.delete
+		= link_to "delete?",@note, method: :delete

@@ -1,0 +1,15 @@
+.h
+	Notes mothafucka!
+	.list
+		%ul
+		-@notes.each do |note|
+			.sticky
+				.id
+					#{note.id}
+				.title
+					= link_to note.title, note
+				.content
+					#{note.note}
+				.delete
+					=link_to 'delete', note_path(note), method: :delete
+	= render partial: "notes/new" 
