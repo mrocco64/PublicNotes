@@ -2,12 +2,18 @@
 	Notes mothafucka!
 	.list
 		%ul
+		- i = 0
 		-@notes.each do |note|
+			-i += 1
 			.sticky
 				.id
 					#{note.id}
 				.title
-					= link_to note.title, note
+					- if note.title.blank?
+						.untitled
+							= link_to  "untitled note ##{i}"
+					- else
+						= link_to note.title, note
 				.content
 					#{note.note}
 				.delete
