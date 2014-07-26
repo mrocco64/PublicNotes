@@ -4,6 +4,6 @@ class Note < ActiveRecord::Base
 	validates :note, presence: true
 
 	def default_values
-		self.title = "note #{Note.all.count + 1}"
+		self.title = self.title.present? ? self.title : "note #{Note.all.count + 1}"
 	end
 end
