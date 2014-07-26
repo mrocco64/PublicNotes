@@ -40,4 +40,5 @@ gem 'spring',        group: :development
 
 gem "haml"
 gem 'sass'
-
+gem 'rails_12factor'
+ruby '2.1.2'
