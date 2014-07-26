@@ -1,9 +1,10 @@
 .h
 	Notes mothafucka!
+	= render partial: "notes/new" 
 	.list
 		%ul
 		- i = 0
-		-@notes.each do |note|
+		-@notes.reverse.each do |note|
 			-i += 1
 			.sticky
 				.id
@@ -18,4 +19,3 @@
 					#{note.note}
 				.delete
 					=link_to 'delete', note_path(note), method: :delete
-	= render partial: "notes/new" 
