@@ -2,10 +2,9 @@
 	Notes mothafucka!
 	= render partial: "notes/new" 
 	.list
-		%ul
-		- i = 0
+		- i = @notes.count + 1
 		-@notes.reverse.each do |note|
-			-i += 1
+			-i -= 1
 			.sticky
 				.id
 					#{note.id}
