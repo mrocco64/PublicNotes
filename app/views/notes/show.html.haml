@@ -1,10 +1,17 @@
-.list
-	.sticky
-		.id
-			#{@note.id}
-		.title
-			#{@note.title}
-		.content
-			#{@note.note}
-	.delete
-		= link_to "delete?",@note, method: :delete
+.h
+	.list
+		.sticky
+			.id
+				#{@note.id}
+			.title
+				- if @note.title.blank?
+					.untitled
+						untitled note
+				- else
+					#{@note.title}
+			.content
+				#{@note.note}
+			.delete
+				= link_to "delete?",@note, method: :delete
+		.back
+			=link_to "back", notes_path
