@@ -14,6 +14,9 @@
 							= link_to  "untitled note ##{i}", note
 					- else
 						= link_to note.title, note
+				- if note.image?
+					.image
+						%img{ src: note.image}
 				.content
 					#{note.note}
 				.delete

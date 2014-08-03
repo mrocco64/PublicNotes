@@ -19,7 +19,7 @@ class NotesController < ApplicationController
   end
   def create
     puts '*****************'
-  	Note.create(title: params[:note][:title], note: params[:note][:note])
+  	Note.create(title: params[:note][:title], note: params[:note][:note], image: params[:note][:image])
   	redirect_to notes_path
   end
 end
